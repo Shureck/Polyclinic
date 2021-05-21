@@ -23,13 +23,29 @@ public class Doctor {
     private String lastName;
     @Column(name = "middle_name")
     private String middleName;
-    @Column(name = "specialtys")
-    private String specialtys;
 
     @Column(name = "email")
     private String email;
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    public Doctor(String firstName, String lastName, String middleName, String email, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
 
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }
