@@ -71,9 +71,7 @@ public class HtmlController {
     @RequestMapping(value = "/save-project", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
             produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody String loginModel(String login, String pass, Boolean vra4) throws Exception {
-        LoginModel loginModel = new LoginModel(login, pass, vra4);
-        loginRepos.save(new Login(login, pass));
-        return loginModel.toString();
+        return "Test is alright";
     }
 
 }
