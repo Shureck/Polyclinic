@@ -6,6 +6,7 @@ import com.shureck.models.Project;
 import com.shureck.repo.LoginRepos;
 import com.shureck.repo.SpecRepository;
 import com.shureck.repo.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +16,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+@AllArgsConstructor
 @Controller
 public class HtmlController {
 
-    @Autowired
-    LoginRepos loginRepos;
-    @Autowired
-    SpecRepository specRepository;
+    private LoginRepos loginRepos;
+    private SpecRepository specRepository;
+
 
     @GetMapping("/create-project")
     public String createProjectForm(Model model) {

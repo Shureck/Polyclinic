@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
     <script th:inline="javascript">
         /*<![CDATA[*/
-
         function move()
         {
             let node = document.getElementById('phone');
@@ -15,24 +13,19 @@
             for (let i = 0; i < test; i++) {
                 let msg = /*[[${continents[0].getFirstName()}]]*/ "0";
                 console.log(msg);
-                node.insertAdjacentHTML('afterend', `<p><label><input type="checkbox" name="spec" value="${msg}">${msg}</label></p>`);
+                node.insertAdjacentHTML('afterend', `<p><label><input type="radio" name="spec" value="${msg}">${msg}</label></p>`);
             }
         }
-
         /*]]>*/
     </script>
-
 </head>
 <body onload="move()">
-
     <form action="/add_doctor" method="post">
         <p><input type="text" name="firstName"> firstName</p>
         <p><input type="text" name="lastName"> lastName</p>
         <p><input type="text" name="middleName"> middleName</p>
         <p><input type="email" name="email"> email</p>
         <p id="phone"><input type="tel" name="phoneNumber"> phoneNumber</p>
-
-
         <p><input type="submit"></p>
     </form>
 </body>
